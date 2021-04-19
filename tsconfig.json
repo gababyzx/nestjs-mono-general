@@ -6,11 +6,25 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
-    "paths": {}
+    "paths": {
+      "@lib/test": [
+        "libs/test/src"
+      ],
+      "@lib/test/*": [
+        "libs/test/src/*"
+      ],
+      "@lib/share": [
+        "libs/share/src"
+      ],
+      "@lib/share/*": [
+        "libs/share/src/*"
+      ]
+    }
   }
 }

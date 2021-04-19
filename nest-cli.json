@@ -4,8 +4,11 @@
   "monorepo": true,
   "root": "apps/api",
   "compilerOptions": {
-    "webpack": true,
-    "tsConfigPath": "apps/api/tsconfig.app.json"
+    "webpack": false,
+    "tsConfigPath": "apps/api/tsconfig.app.json",
+    "assets": [
+      "env/**"
+    ]
   },
   "projects": {
     "api": {
@@ -14,16 +17,22 @@
       "entryFile": "main",
       "sourceRoot": "apps/api/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/api/tsconfig.app.json"
+        "tsConfigPath": "apps/api/tsconfig.app.json",
+        "assets": [
+          "env/**"
+        ]
       }
     },
-    "core": {
-      "type": "application",
-      "root": "libs/core",
-      "entryFile": "main",
-      "sourceRoot": "libs/core/src",
+    "share": {
+      "type": "library",
+      "root": "libs/share",
+      "entryFile": "index",
+      "sourceRoot": "libs/share/src",
       "compilerOptions": {
-        "tsConfigPath": "libs/core/tsconfig.app.json"
+        "tsConfigPath": "libs/share/tsconfig.lib.json",
+        "assets": [
+          "env/**"
+        ]
       }
     }
   }

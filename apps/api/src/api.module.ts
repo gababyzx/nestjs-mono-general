@@ -1,12 +1,13 @@
 import { Module } from '@nestjs/common';
 import { ApiController } from './api.controller';
 import { ApiService } from './api.service';
-import { WorkerPlanService } from './modules/worker-plan/worker-plan.service';
-import { WorkerPlanModule } from './modules/worker-plan/worker-plan.module';
+import { CustomerModule } from './modules/customer/customer.module';
+import { DatabaseModule } from './modules/database/database.module';
+import { EnvModule } from './modules/env/env.module';
 
 @Module({
-  imports: [WorkerPlanModule],
+  imports: [EnvModule, DatabaseModule, CustomerModule],
   controllers: [ApiController],
-  providers: [ApiService, WorkerPlanService],
+  providers: [ApiService],
 })
-export class ApiModule {}
+export class ApiModule { }

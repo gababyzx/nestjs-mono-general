@@ -1,20 +1,19 @@
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
 ## Installation
 
 ```bash
-$ npm install
+npm install
 ```
 
 - Create a redis localhost
 
 ```bash
-$ docker run --restart unless-stopped -d -p 6379:6379 --name redis redis
+docker run --restart unless-stopped -d -p 6379:6379 --name redis redis
 ```
 
 - Create a postgres localhost
+
 ```bash
-$ docker run --restart unless-stopped -d -p 5432:5432 --name postgres -e POSTGRES_USER=root -e POSTGRES_PASSWORD=4KtM1WPxOfO4sHfAYKz -e POSTGRES_DB=baam  postgres
+docker run --restart unless-stopped -d -p 5432:5432 --name postgres -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=4KtM1WPxOfO4sHfAYKz -e POSTGRES_DB=baam  postgres
 ```
 
 ## Running the app
