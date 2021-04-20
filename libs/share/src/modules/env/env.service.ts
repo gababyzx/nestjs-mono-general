@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 import fs from 'fs';
 import cluster from 'cluster';
 import lodash from 'lodash';
-import path from 'path';
+import { resolvePath } from '@lib/share/common/utils';
 
 export interface EnvData {
   // application
@@ -28,7 +28,8 @@ export class EnvService {
 
   constructor() {
     const environment = process.env.NODE_ENV || 'development';
-    const envPath = path.join(__dirname, `../../env/.env.${environment}`);
+    const envPath = resolvePath(`../../../../env/.env.${environment}`);
+    
     console.log('-------envPath:', envPath);
     const data: any = dotenv.parse(fs.readFileSync(envPath));
 
@@ -54,7 +55,9 @@ export class EnvService {
   }
 
   currentWorker(): string {
-    const worker = lodash.isNil(cluster.worker) ? 'master' : `worker@${cluster.worker.id}`;
+    const worker = lodash.isNil(cluster.worker)
+      ? 'master'
+      : `worker@${cluster.worker.id}`;
     return worker;
   }
 }

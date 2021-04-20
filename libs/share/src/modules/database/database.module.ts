@@ -1,7 +1,7 @@
 import { Module, DynamicModule } from '@nestjs/common';
 import { EnvModule } from '../env/env.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { EnvService } from '@lib/share/modules/env/env.service';
+import { EnvService } from '../env/env.service';
 
 function DatabaseOrmModule(): DynamicModule {
   const config = new EnvService().read();

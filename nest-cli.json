@@ -1,26 +1,24 @@
 {
   "collection": "@nestjs/schematics",
-  "sourceRoot": "apps/api/src",
+  "sourceRoot": "apps/baam/src",
   "monorepo": true,
-  "root": "apps/api",
+  "root": "apps/baam",
   "compilerOptions": {
     "webpack": false,
-    "tsConfigPath": "apps/api/tsconfig.app.json",
+    "tsConfigPath": "apps/baam/tsconfig.app.json",
     "assets": [
       "env/**"
     ]
   },
   "projects": {
-    "api": {
+    "baam": {
       "type": "application",
-      "root": "apps/api",
+      "root": "apps/baam",
       "entryFile": "main",
-      "sourceRoot": "apps/api/src",
+      "sourceRoot": "apps/baam/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/api/tsconfig.app.json",
-        "assets": [
-          "env/**"
-        ]
+        "webpack": false,
+        "tsConfigPath": "apps/baam/tsconfig.app.json"
       }
     },
     "share": {
@@ -29,10 +27,8 @@
       "entryFile": "index",
       "sourceRoot": "libs/share/src",
       "compilerOptions": {
-        "tsConfigPath": "libs/share/tsconfig.lib.json",
-        "assets": [
-          "env/**"
-        ]
+        "webpack": false,
+        "tsConfigPath": "libs/share/tsconfig.lib.json"
       }
     }
   }
