@@ -1,8 +1,8 @@
-import { BaseEntity } from '@lib/share/common/entity/base.entity';
+import { ShareEntity } from '@lib/share/base.entity';
 import { Column, Entity } from 'typeorm';
 
 @Entity()
-export class CustomerEntity extends BaseEntity {
+export class CustomerEntity extends ShareEntity {
 
     constructor(partial: Partial<CustomerEntity>) {
         super(partial);

@@ -4,11 +4,7 @@
   "monorepo": true,
   "root": "apps/baam",
   "compilerOptions": {
-    "webpack": false,
-    "tsConfigPath": "apps/baam/tsconfig.app.json",
-    "assets": [
-      "env/**"
-    ]
+    "tsConfigPath": "apps/baam/tsconfig.app.json"
   },
   "projects": {
     "baam": {
@@ -17,7 +13,6 @@
       "entryFile": "main",
       "sourceRoot": "apps/baam/src",
       "compilerOptions": {
-        "webpack": false,
         "tsConfigPath": "apps/baam/tsconfig.app.json"
       }
     },
@@ -27,7 +22,6 @@
       "entryFile": "index",
       "sourceRoot": "libs/share/src",
       "compilerOptions": {
-        "webpack": false,
         "tsConfigPath": "libs/share/tsconfig.lib.json"
       }
     }

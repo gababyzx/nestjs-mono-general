@@ -13,6 +13,9 @@
     "baseUrl": "./",
     "incremental": true,
     "paths": {
+      "env": [
+        "env"
+      ],
       "@lib/test": [
         "libs/test/src"
       ],
@@ -24,6 +27,18 @@
       ],
       "@lib/share/*": [
         "libs/share/src/*"
+      ],
+      "@app/test": [
+        "apps/test/src"
+      ],
+      "@app/test/*": [
+        "apps/test/src/*"
+      ],
+      "@app/baam": [
+        "apps/baam/src"
+      ],
+      "@app/baam/*": [
+        "apps/baam/src/*"
       ]
     }
   }

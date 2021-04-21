@@ -4,9 +4,10 @@ import { DatabaseModule } from '../../../libs/share/src/modules/database/databas
 import { EnvModule } from '../../../libs/share/src/modules/env/env.module';
 import { BaamController } from './baam.controller';
 import { BaamService } from './baam.service';
-import { ShareCustomerService } from '@lib/share/modules/customer/customer.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { CustomerEntity } from '@lib/share/modules/customer/entities/customer.entity';
+import { CustomerEntity } from '@lib/share/entities/customer.entity';
+import { ShareCustomerService } from '@lib/share/modules/customer/customer.service';
+import { ShareService } from '@lib/share/share.service';
 
 @Module({
   imports: [
@@ -16,6 +17,6 @@ import { CustomerEntity } from '@lib/share/modules/customer/entities/customer.en
     TypeOrmModule.forFeature([CustomerEntity]),
   ],
   controllers: [BaamController],
-  providers: [ShareCustomerService, BaamService],
+  providers: [ShareService, ShareCustomerService, BaamService],
 })
 export class BaamModule {}

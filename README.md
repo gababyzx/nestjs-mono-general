@@ -4,6 +4,10 @@
 npm install
 ```
 
+```bash
+npm install -g ts-node
+```
+
 - Create a redis localhost
 
 ```bash

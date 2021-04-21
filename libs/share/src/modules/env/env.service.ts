@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 import fs from 'fs';
 import cluster from 'cluster';
 import lodash from 'lodash';
+import path from 'path';
 import { resolvePath } from '@lib/share/common/utils';
 
 export interface EnvData {
@@ -29,10 +30,8 @@ export class EnvService {
   constructor() {
     const environment = process.env.NODE_ENV || 'development';
     const envPath = resolvePath(`../../../../env/.env.${environment}`);
-    
-    console.log('-------envPath:', envPath);
+    console.log('environment: ', { envPath, environment });
     const data: any = dotenv.parse(fs.readFileSync(envPath));
-
     data.APP_ENV = environment;
     data.APP_DEBUG = data.APP_DEBUG === 'true' ? true : false;
     data.START_AT = new Date();

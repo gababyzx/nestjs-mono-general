@@ -6,7 +6,7 @@ export class BaamController {
   constructor(private readonly baamService: BaamService) {}
 
   @Get()
-  getHello(): string {
-    return this.baamService.getHello();
+  getHello() {
+    return this.baamService.getServiceInfo();
   }
 }
